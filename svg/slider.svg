@@ -1,0 +1,12 @@
+<svg id="Group_7" data-name="Group 7" xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18">
+  <g id="Group_6" data-name="Group 6">
+    <g id="Group_4" data-name="Group 4">
+      <rect id="Rectangle" width="2" height="18" rx="1" transform="translate(2)" fill="#7b798e"/>
+      <circle id="Oval" cx="3" cy="3" r="3" transform="translate(0 3)" fill="#7b798e"/>
+    </g>
+    <g id="Group_5" data-name="Group 5" transform="translate(10)">
+      <rect id="Rectangle_Copy" data-name="Rectangle Copy" width="2" height="18" rx="1" transform="translate(2)" fill="#7b798e"/>
+      <circle id="Oval_Copy" data-name="Oval Copy" cx="3" cy="3" r="3" transform="translate(0 9)" fill="#7b798e"/>
+    </g>
+  </g>
+</svg>
