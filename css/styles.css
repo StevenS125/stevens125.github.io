@@ -291,7 +291,7 @@ p {
 }
 
 .button-outline {
-    padding: 7.5px 25px;
+    padding: 8.5px 25px;
     margin: 15.5px 8px;
     display: inline-block;
     font-size: 14px;
@@ -440,6 +440,8 @@ p {
     margin: 0 8px;
     padding: 9.5px 15px;
     border-radius: 32px;
+    position: relative;
+    top: -2px;
 }
 .badge-danger {
     background: #FF4057;
@@ -615,6 +617,10 @@ div.dropdown.loc_mod {
     width: 480px;
 }
 
+.request_header button {
+    padding-top: 4px;
+}
+
 #reqconf_m_body,
 #autodelconf_m_body {
     height: 890px;
@@ -632,6 +638,11 @@ div.custom-control.custom-radio {
 }
 .req_td img {
     margin-top: 2px;
+}
+
+#req_td_location {
+    position: relative;
+    top:-7px;
 }
 
 .handeled_body_tb ,
@@ -1333,6 +1344,7 @@ th {
 }
 #pn {
     margin-left: 15px;
+    font-size: 14px;
 }
 .schedule-pre-btn {
     opacity: 0;
@@ -1894,6 +1906,12 @@ p.reason-content {
 .nice-select.roles:after {
     top:60%;
 }
+
+#location_arrow .nice-select.wing::after {
+    margin-top: -2px;
+    right: 18px;
+}
+
 /*///////////////////////////////////media///////////////////////////////////////////////*/
 
 @media (min-width: 1200px) and (max-height: 560px) {
@@ -2146,6 +2164,11 @@ p.reason-content {
         padding: 5px 10px;
         font-size: 10px;
     }
+
+    .button-request {
+        top: 0;
+    }
+
     .button-nonout,
     .button-generate,
     .button-request,
@@ -2163,7 +2186,7 @@ p.reason-content {
         margin: 6px 3px;
     }
     .button-outline {
-        margin:10px 3px 6px;
+        margin:6px 3px 6px;
         padding: 4px 10px;
         font-size: 10px;
     }
@@ -2207,6 +2230,16 @@ p.reason-content {
     .fa-map-marker-alt {
         font-size: 12px !important;
     }
+    .fa-map-marker-alt.location {
+        font-size: 8px !important;
+    }
+
+    #req_td_location {
+        position: relative;
+        top: -9px;
+        
+    }
+
     .dpdn_employees {
         /*top: 37px;*/
     }
@@ -2353,6 +2386,7 @@ p.reason-content {
     #pn {
         margin-left: 4px;
         text-transform: capitalize;
+        font-size: 10px;
     }
     .to_remove {
         display: none;
@@ -2360,6 +2394,22 @@ p.reason-content {
     #noreq_div {
         height: 135px;
     }
+    
+    #shift_category .nice-select.wide .list {
+    position: absolute;
+    top: auto !important;
+    bottom: 100%;
+    left: 0;
+    }
+
+    #location_arrow .nice-select.wing::after {
+        margin-top: -1px;
+    }
+
+    #cog_mobile {
+        font-size: 12px;
+    }
+
 }
 @media (max-width:605px){
     .with-request {
@@ -2415,7 +2465,7 @@ p.reason-content {
         font-size: 10px;
     }
     #spe_week, #add_shift {
-        font-size: 8px;
+        font-size: 10px;
     }
     .nav_dpdn_location .nice-select.roles {
         padding-left: 4px;
@@ -2425,11 +2475,11 @@ p.reason-content {
         font-size: 10px;
     }
     .employee_dropdown .nice-select.roles .current {
-        font-size:8px;
+        font-size:10px;
         margin-bottom:4px;
     }
     .lable_12_lightgrey {
-        font-size: 8px;
+        font-size: 10px;
     }
     .employee_dropdown .roles .list {
         margin-left: -12vw;
@@ -2484,7 +2534,7 @@ p.reason-content {
         font-size:10px;
     }
     .request_header button {
-        padding-bottom: 2px;
+        padding: 2px 12px 2px 0;
     }
 
     .archiveMenu .form-control {
