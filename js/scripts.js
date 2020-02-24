@@ -106,6 +106,7 @@ function exit() {
     save_btn.style.display = "none";
     exit_btn.style.display = "none";
     edi_sch_btn.style.display = "inline-block";
+    document.getElementById("publish-mobile-label").style.display = "none";
     gen_sch_btn.style.display = "inline-block";
     document.getElementById('add_shift').style.display = "none";
     // users_btn.style.display = "inline-block";
@@ -268,33 +269,36 @@ function hide_req_rightsidediv() {
 
 schedule_id = [];
 function display_add_config(event, clicked_id) {
-    // if (edit_flag == 1) {
-        // div_add_shift_position.style.display = "block";
-        // hidediv.style.display = 'block';
-        // flag = 1;
-        // var x = event.clientX;
-        // var y = event.clientY;
-        // var w = window.innerWidth;
-        // var temp = x + 300;
-        // if (w > temp) {
-        //     div_add_shift_position.style.left = x + 'px';
-        //     div_add_shift_position.style.top = '80px';
-        // }
-        // if (w < temp) {
-        //     x = x-300;
-        //     div_add_shift_position.style.left = x + 'px';
-        //     div_add_shift_position.style.top = '80px';
-        // }
-        // if (w < 580) {
-        //     w = (w - 300)/2;
-        //     div_add_shift_position.style.left = w + 'px';
-        //     div_add_shift_position.style.top = '30px';
-        // }
-        //  else {
-        //     x = x - 310;
-        //     div_add_shift_position.style.left = x + 'px';
-        // }
-        // y = y - 90;
+    // if (edit_flag > 1) {
+    //     div_add_shift_position.style.display = "block";
+    //     hidediv.style.display = 'block';
+    //     flag = 1;
+    //     var x = event.clientX;
+    //     var y = event.clientY;
+    //     var w = window.innerWidth;
+    //     var temp = x + 300;
+    //     if (w > temp) {
+    //         div_add_shift_position.style.left = x + 'px';
+    //         div_add_shift_position.style.top = '80px';
+    //     }
+    //     if (w < temp) {
+    //         x = x-300;
+    //         div_add_shift_position.style.left = x + 'px';
+    //         div_add_shift_position.style.top = '80px';
+    //     }
+    //     if (w < 580) {
+    //         w = (w - 300)/2;
+    //         div_add_shift_position.style.left = w + 'px';
+    //         div_add_shift_position.style.top = '30px';
+    //     }
+    //      else {
+    //         x = x - 310;
+    //         div_add_shift_position.style.left = x + 'px';
+    //     }
+    // }
+    //     y = y - 90;
+        console.log('fish')
+        
 
         schedule_id.push(document.getElementById(clicked_id));
         // schedule_id = document.getElementById(clicked_id);
@@ -335,7 +339,7 @@ function display_add_config_final(event) {
         // if (windows zoma < tviton am boxis zomaze) {
         //     div_add_shift_position.style.top = '0px';
         // }
-
+        console.log('tacos')
         // schedule_id = document.getElementById(clicked_id);
         // extract_id_name = clicked_id;
     }
@@ -363,6 +367,7 @@ function display_add_config_final(event) {
 
 function shift_activated() {
     div_add_shift_position.style.display = "none";
+    div_edit_shift_position.style.display ="none"
 
     // schedule_id.style.border = "none";
     var index = extract_id_name.indexOf('member');
@@ -376,12 +381,25 @@ function shift_activated() {
     for(let i = 0; i < schedule_id.length; i++){
         schedule_id[i].style.border = "none";
         schedule_id[i].classList.add(strOut, 'chosen');
+        console.log(schedule_id[i]);
+        schedule_id[i].setAttribute("onClick", "display_edit_shift()")
     }
     document.body.style.overflow = "initial";
 }
 
+function display_edit_shift() {
+    document.getElementById("div_edit_shift_position").style.display = 'block'
+}
+
 function hide_div_add_shift() {
     div_add_shift_position.style.display = "none";
+    hidediv.style.display = "none";
+    document.body.style.overflow = 'initial';
+    cancel_template();
+}
+
+function hide_div_edit_shift() {
+    div_edit_shift_position.style.display = "none";
     hidediv.style.display = "none";
     document.body.style.overflow = 'initial';
     cancel_template();
@@ -650,7 +668,9 @@ function re_edit() {
     exit_btn.style.display = "inline";
     spe_week.style.display = "inline";
     sel_emp.style.display = "inline";
+    document.getElementById("publish-mobile-label").style.display = "block";
     edi_sch_btn.style.display = "none";
+
     gen_sch_btn.style.display = "none";
     pn.style.display = "inline-block";
 

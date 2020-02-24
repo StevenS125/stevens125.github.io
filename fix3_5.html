@@ -148,16 +148,16 @@
         </button>
         <button type="button" class="btn btn_only_content" id="spe_week">
                 <i class="fas fa-star my_2f89fc  "></i> Special Weeks
-                </button>
+        </button>
+        <span class="lable_12_lightgrey" id="pn">Publish and notify:</span>
+        <div class="btn-group nav_dpdn_location employee_dropdown hidden no-desktop" id="sel_emp">
+            <select class="roles">
+                <option data-display="All employees">All employees</option>
+                <option value="1">Employ 1</option>
+                <option value="2">Employ 2</option>
+            </select>
+        </div>
         <div id="responsive_btn_group">
-            <span class="lable_12_lightgrey" id="pn"><span class="to_remove">Publish and </span>notify:</span>
-            <div class="btn-group nav_dpdn_location employee_dropdown hidden" id="sel_emp">
-                <select class="roles">
-                    <option data-display="All employees">All employees</option>
-                    <option value="1">Employ 1</option>
-                    <option value="2">Employ 2</option>
-                </select>
-            </div>
             <button type="button" class="btn btn-outline-primary button-outline hidden" data-toggle="modal" data-target="#locationmodal" id="pub_btn" onclick="veri_view()">
                 Publish
             </button>
@@ -244,6 +244,67 @@
         </button>
         <button type="button" class="btn btn-primary button-nonout" style="float: right; padding: 5px 24px; margin: 3px 0; font-size: 12px;" onclick="shift_activated()">Save</button>
     </div>
+
+    <div class="div_edit_shift" id="div_edit_shift_position" style="display: none;">
+        <h5>Edit Shift</h5>
+        <p>Select a shift template below or enter a shift time manually.</p>
+        <div class="popup_block">
+            <p style="color: #282731;">Available shifts</p>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="display: block; margin-top: 5px;">
+                <label class="btn ava_shift ver_mod form-check-label" id="template_01" onclick="shiftTemplate('00:00','12:00')">
+                                <input class="form-check-input" type="radio" name="options">12:00 AM - 12:00 PM
+                            </label>
+                <label class="btn ava_shift ver_mod form-check-label" id="template_02" onclick="shiftTemplate('00:00','06:00')">
+                                <input class="form-check-input" type="radio" name="options">12:00 AM - 06:00 AM
+                            </label>
+                <label class="btn ava_shift ver_mod form-check-label" id="template_03" onclick="shiftTemplate('04:00','00:00')">
+                                <input class="form-check-input" type="radio" name="options">04:00 PM - 12:00 AM
+                            </label>
+            </div>
+        </div>
+        <div class="popup_block" style="margin-bottom: 5px; margin-top:10px;">
+            <p style="color: #282731;">Add shift time manually</p>
+            <div class="form-group input_manual_group">
+                <input type="time" class="input_manual" id="value_from"  onchange="cancel_template()" value="00:00"/>
+            </div>
+            <p style="display: inline-block;">to</p>
+            <div class="form-group input_manual_group">
+                <input type="time" class="input_manual" id="value_to" onchange="cancel_template()" value="00:00"/>
+            </div>
+        </div>
+        <div class="popup_block">
+            <p style="color: #282731;">Add location</p>
+            <div style="margin-bottom: 50px;">
+                <select class="wide">
+                    <!-- <option data-display="Select">Pediatric Wing</option> -->
+                    <option value="1">Pediatric Wing</option>
+                    <option value="2">Emergency Ward 1</option>
+                    <option value="3">Emergency Ward 2</option>
+                </select>
+            </div>
+        </div>
+        <div class="popup_block">
+            <p style="color: #282731;">Note</p>
+            <p style="padding-bottom: 5px;">Write note only if it applies to everyone</p>
+            <textarea class="form-control" rows="2" id="comment" placeholder="Write note here..."></textarea>
+        </div>
+        <div class="popup_block">
+            <p style="color: #282731; margin-top:5px;">Shift Categorization</p>
+            <div style="margin-bottom: 60px;" id="shift_category">
+                <select class="wide">
+                    <!-- <option data-display="Select">Pediatric Wing</option> -->
+                    <option value="1">Contract</option>
+                    <option value="2">Contract 1</option>
+                    <option value="3">Contract 2</option>
+                </select>
+            </div>
+        </div>
+        <button type="button" class="btn btn_only_content" style="float: left; padding: 8px 0; font-size: 12px;" onclick="hide_div_edit_shift()">
+            Cancel
+        </button>
+        <button type="button" class="btn btn-primary button-nonout" style="float: right; padding: 5px 24px; margin: 3px 0; font-size: 12px;" onclick="shift_activated()">Save</button>
+    </div>
+
     <div class="outer" id="month_content">
         <div class="inner">
             <table>
@@ -911,6 +972,7 @@
         });
     </script>
     <script src="js/jquery.nice-select.js"></script>
+    <span class="lable_12_lightgrey" id="publish-mobile-label">Publish and notify:</span>
 </body>
 
 </html>

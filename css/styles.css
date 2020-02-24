@@ -1319,7 +1319,8 @@ th {
 .employee_modal_role,
 .lable_12_lightgrey,
 #employee_directory p,
-#div_add_shift_position p {
+#div_add_shift_position p,
+#div_edit_shift_position p {
     font-size: 12px;
     color: #7B798E;
 }
@@ -1346,6 +1347,13 @@ th {
     margin-left: 15px;
     font-size: 14px;
 }
+
+    /* .nice-select.roles .current {
+        position: relative;
+        top: 23px;
+        right: -12px;
+    } */
+
 .schedule-pre-btn {
     opacity: 0;
     transition: opacity .5s ease;
@@ -1420,6 +1428,20 @@ th {
     border-radius: 4px;
 }
 
+.div_edit_shift {
+    position: fixed;
+    width: 300px;
+    max-height: 90vh;
+    background-color: white;
+    /*overflow: auto;*/
+    box-shadow: -1px 1px 10px #555;
+    z-index: 2;
+    /*padding: 16px 24px;*/
+    /*padding: 16px 8px 16px 24px;*/
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
 .div_employee_directory {
     position: absolute;
     width: 470px;
@@ -1459,7 +1481,8 @@ th {
 }
 
 #employee_directory h5,
-#div_add_shift_position h5 {
+#div_add_shift_position h5,
+#div_edit_shift_position h5 {
     font-size: 16px;
     color: #282731;
     padding-bottom: 5px;
@@ -1912,6 +1935,11 @@ p.reason-content {
     right: 18px;
 }
 
+#publish-mobile-label {
+    display: none;
+}
+
+
 /*///////////////////////////////////media///////////////////////////////////////////////*/
 
 @media (min-width: 1200px) and (max-height: 560px) {
@@ -2107,6 +2135,12 @@ p.reason-content {
 }
 
 @media (max-width: 767px) {
+    #edi_sch_btn {
+        margin-top: 7px;
+        position: relative;
+        top: 2px;
+    }
+
     .handled_td{
         padding: 8px !important;
     }
@@ -2356,7 +2390,8 @@ p.reason-content {
     .reason-wrap {
         top:-50px;
     }
-    #div_add_shift_position p {
+    #div_add_shift_position p,
+    #div_edit_shift_position p {
         font-size:10px;
     }
     .popup_block .nice-select.wide {
@@ -2376,7 +2411,11 @@ p.reason-content {
     /*}*/
     #sel_emp {
         margin: 0;
+        position: relative;
+        top: 34px;
+        left: -200px;
     }
+
     #employee_directory p {
         font-size: 10px;
     }
@@ -2384,7 +2423,7 @@ p.reason-content {
         margin-bottom: 4px;
     }
     #pn {
-        margin-left: 4px;
+        
         text-transform: capitalize;
         font-size: 10px;
     }
@@ -2489,7 +2528,7 @@ p.reason-content {
 @media (max-width: 501px) {
     #responsive_btn_group{
         display: inline-block;
-        margin: auto;
+        margin: auto 0 auto auto;
     }
     #responsive_drp{
         display: none;
@@ -2549,6 +2588,20 @@ p.reason-content {
 }
 
 @media (max-width: 454px) {
+    #sel_emp {
+        margin: 0;
+        position: absolute;
+        top: 68px;
+        left: 125px;
+    }
+
+    #publish-mobile-label {
+        display: block;
+        position: absolute;
+        top: 212px;
+        left: 36px;
+    }
+
     #schedule_edit {
         padding: 0 5px;
         max-width:100%;
@@ -2583,7 +2636,8 @@ p.reason-content {
         padding-right: 110px;
     }
     .div_change_shift,
-    .div_add_shift {
+    .div_add_shift,
+    .div_edit_shift {
         position: fixed;
     }
     .popup_block{
@@ -2598,6 +2652,26 @@ p.reason-content {
     /*}*/
     .txt_nav_show_ym {
         font-size: 10px;
+    }
+
+    #pn {
+        display: none !important;
+    }
+}
+
+@media (max-width: 376px) {
+#sel_emp {
+    margin: 0;
+    position: absolute;
+    top: 68px;
+    left: 75px;
+    }
+
+#publish-mobile-label {
+    display: none;
+    position: absolute;
+    top: 200px;
+    left: 78px;
     }
 }
 
@@ -2626,4 +2700,17 @@ p.reason-content {
         padding-left: 14px;
         padding-right: 26px;
     }
+    #sel_emp {
+        margin: 0;
+        position: absolute;
+        top: 68px;
+        left: 25px;
+        }
+    
+    #publish-mobile-label {
+        display: none;
+        position: absolute;
+        top: 200px;
+        left: 28px;
+        }
 }
