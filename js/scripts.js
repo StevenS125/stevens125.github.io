@@ -668,11 +668,14 @@ function re_edit() {
     exit_btn.style.display = "inline";
     spe_week.style.display = "inline";
     sel_emp.style.display = "inline";
-    document.getElementById("publish-mobile-label").style.display = "block";
     edi_sch_btn.style.display = "none";
 
     gen_sch_btn.style.display = "none";
     pn.style.display = "inline-block";
+
+    if (window.matchMedia('screen and (max-width: 768px)').matches) {
+        document.getElementById("publish-mobile-label").style.display = "block";
+    }
 
 
     editState = true;
