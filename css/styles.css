@@ -830,8 +830,9 @@ i {
 }
 .marker-icon {
     position: absolute;
-    left:0;
-    top: 26px;
+    left: 0px;
+    top: 25px;
+    font-size: 14px;
 }
 .nav_dpdn_location .dropdown-item,
 .dropdown_role .dropdown-item,
@@ -1920,7 +1921,7 @@ p.reason-content {
     font-size: 12px;
 }
 .nice-select.wing {
-    padding: 20px 30px 20px 25px;
+    padding: 20px 30px 20px 15px;
 }
 .nice-select.roles .current {
     font-size:14px;
@@ -2664,14 +2665,14 @@ p.reason-content {
     margin: 0;
     position: absolute;
     top: 68px;
-    left: 75px;
+    left: 80px;
     }
 
 #publish-mobile-label {
     display: none;
     position: absolute;
-    top: 200px;
-    left: 78px;
+    top: 212px;
+    left: 5px;
     }
 }
 
