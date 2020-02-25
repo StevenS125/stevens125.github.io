@@ -110,6 +110,8 @@ function exit() {
     gen_sch_btn.style.display = "inline-block";
     document.getElementById('add_shift').style.display = "none";
     // users_btn.style.display = "inline-block";
+    editState = false;
+    document.getElementById("tip").style.display = "none";
 }
 
 function exit_add() {
@@ -238,16 +240,18 @@ function display_change_config(event, clicked_id) {
 }
 
 function delete_change_shift() {
-    schedule_id.style.display = "none";
+    // schedule_id.style.display = "none";
     div_change_shift_position.style.display = "none";
     hidediv.style.display = "none";
+    $('.panel').css('background', 'white');
 }
 
 function save_change_shift() {
-    schedule_id.classList.add("schedule-set-btn");
-    schedule_id.classList.remove("schedule-req-btn", 'clickedBorder');
+    // schedule_id.classList.add("schedule-set-btn");
+    // schedule_id.classList.remove("schedule-req-btn", 'clickedBorder');
     div_change_shift_position.style.display = "none";
     hidediv.style.display = "none";
+    $('.panel').css('background', 'white');
 }
 
 function hide_req_rightsidediv() {
@@ -297,7 +301,7 @@ function display_add_config(event, clicked_id) {
     //     }
     // }
     //     y = y - 90;
-        console.log('fish')
+        
         
 
         schedule_id.push(document.getElementById(clicked_id));
@@ -442,6 +446,8 @@ function show_div_request() {
         req_delete_content_01.style.display = "block";
         req_adjust_content_01.style.display = "none";
         req_paidtime_content_01.style.display = "none";
+        var elmnt = document.getElementById("first_member_01");
+            elmnt.scrollIntoView(true);
     }
     if (req_content_flag == 1) {
         req_delete_content_01.style.display = "none";
@@ -545,23 +551,35 @@ window.onclick = function(event) {
 
 function show_constraints() {
     var w = window.innerWidth;
-    if (w < 800) {
-        // tip.style.left = '40vw';
-        let boxes = document.querySelectorAll(".to_remove");
-        let message = document.querySelector('.to_show');
-        boxes.forEach(box => box.style.display = "none");
-        message.style.display = "table-cell";
-        setTimeout(function() {
-            boxes.forEach(box => box.style.display = "table-cell");
-            message.style.display = 'none';
-        }, 3000);
-    } else {
+    if (editState == true) {
+    // if (w < 800) {
+    //     // tip.style.left = '40vw';
+    //     let boxes = document.querySelectorAll(".to_remove");
+    //     let message = document.querySelector('.to_show');
+    //     boxes.forEach(box => box.style.display = "none");
+    //     message.style.display = "table-cell";
+    //     setTimeout(function() {
+    //         boxes.forEach(box => box.style.display = "table-cell");
+    //         message.style.display = 'none';
+    //     }, 3000);
+    // } else {
+        if (window.matchMedia('screen and (max-width: 768px)').matches) {
+            tip.style.top = '30px';
+            w = w - 400;
+            w = w / 5.6;
+            tip.style.right = w + 'px';
+            tip.style.display = 'block';
+            setTimeout(function() { tip.style.display = 'none'; }, 3000);
+        }
+        else {
         w = w - 800;
         w = w / 5.6;
         tip.style.right = w + 'px';
         tip.style.display = 'block';
         setTimeout(function() { tip.style.display = 'none'; }, 3000);
-    }
+    // } 
+}
+}
 }
 
 
