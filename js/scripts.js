@@ -722,6 +722,7 @@ window.onclick = function(event) {
               }
         
               schedule_id.style.boxShadow = "0 0 0 3px #fff, 0 0 0 4px red"
+              $('.panel').css('background', 'white');
             
         }
         if (flag == 4) {
