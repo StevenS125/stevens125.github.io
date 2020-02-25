@@ -64,8 +64,8 @@ function next_month_week_day() {
             break;
           case 3:
               document.getElementById("chosen_month").innerHTML = "April 2019"
-              $('.second_member').toggle()
-              $('.fifth_member').toggle()
+              $('.second_member').show()
+              $('.fifth_member').show()
             //   $('.april').show();
               break;
           case 4:
@@ -105,8 +105,8 @@ function prev_month_week_day() {
             break;
         case 3:
             document.getElementById("chosen_month").innerHTML = "April 2019";
-            $('.second_member').toggle()
-            $('.fifth_member').toggle()
+            $('.second_member').show()
+            $('.fifth_member').show()
             // $('.april').show();
             // $('.may').hide();
             break;
@@ -303,6 +303,8 @@ function display_change_config(event, clicked_id) {
       if (month_selected !== 3) {
         month_selected = 3
         document.getElementById("chosen_month").innerHTML = "April 2019";
+        $('.second_member').show()
+        $('.fifth_member').show()
     }
 
       schedule_id.style.boxShadow = "0 0 0 2px black"
@@ -856,6 +858,8 @@ function show_reqPaidtime() {
     if (month_selected !== 3) {
         month_selected = 3
         document.getElementById("chosen_month").innerHTML = "April 2019";
+        $('.second_member').show()
+        $('.fifth_member').show()
     }
 }
 
