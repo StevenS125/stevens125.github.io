@@ -8,6 +8,11 @@ var paidtime_flag = 0;
 var empty_flag = 0;
 var edit_flag = 0;
 var edit_data = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+// toggling between month,week,day, month=0, week=1, day=2;
+var week_day_month_selected = 0;
+var month_selected = 3;
+var week_selected = 0;
+var day_selected = 0;
 
 $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
@@ -22,11 +27,76 @@ function ShowHideDiv_AA() {}
 
 function ShowHideDiv_Se() {}
 
-function monthhref() {}
+function monthhref() {
+    week_day_month_selected = 0;
+}
 
-function weekhref() {}
+function weekhref() {
+    week_day_month_selected = 1;
+}
 
-function dayhref() {}
+function dayhref() {
+    week_day_month_selected = 2;
+}
+
+function next_month_week_day() {
+    switch(week_day_month_selected) {
+        case 0:
+            if (month_selected > 0 && month_selected < 11) {
+            month_selected++
+            }
+            console.log(month_selected)
+          break;
+        case 1:
+            
+          break;
+        default:
+            schedule_id = null;
+      }
+      
+      switch (month_selected) {
+          case 3:
+              document.getElementById("chosen_month").innerHTML = "April 2019"
+            //   $('.april').show();
+              break;
+          case 4:
+            document.getElementById("chosen_month").innerHTML = "May 2019"
+            // $('.may').show();
+            // $('.april').hide();
+            break;
+            default:
+                null
+      }
+}
+
+function prev_month_week_day() {
+    switch(week_day_month_selected) {
+        case 0:
+            if (month_selected > 0){
+            month_selected--
+            console.log(month_selected)
+            }
+          break;
+        case 1:
+            
+          break;
+        default:
+            schedule_id = null;
+      }
+      switch (month_selected) {
+        case 3:
+            document.getElementById("chosen_month").innerHTML = "April 2019";
+            // $('.april').show();
+            // $('.may').hide();
+            break;
+        case 4:
+          document.getElementById("chosen_month").innerHTML = "May 2019";
+        //   $('.may').show();
+          break;
+          default:
+              null
+    }
+}
 
 function edi_sch() {
     add_shift.style.display = "inline-block";
@@ -197,6 +267,23 @@ function to_fix12() {
 }
 
 function display_change_config(event, clicked_id) {
+
+    switch(req_content_flag) {
+        case 0:
+            schedule_id = document.getElementById("first_member_01");
+          break;
+        case 1:
+            schedule_id = document.getElementById("first_member_09");
+          break;
+        default:
+            schedule_id = null;
+      }
+
+      schedule_id.style.boxShadow = "0 0 0 2px black"
+
+    // if ($('.panel').css('background', '#F9F9F9')) {
+    //     $('.panel').css('background', '#FFF');
+    // }
     if (req_start_flag == 1) {
         $('.panel').css('background', '#F9F9F9');
         flag = 3;
@@ -237,18 +324,44 @@ function display_change_config(event, clicked_id) {
         }
         show_div_request();
     }
+
+    
 }
 
-function delete_change_shift() {
-    // schedule_id.style.display = "none";
+function delete_change_shift(event, clicked_id) {
+    switch(req_content_flag) {
+        case 0:
+            schedule_id = document.getElementById("first_member_01");
+          break;
+        case 1:
+            schedule_id = document.getElementById("first_member_09");
+          break;
+        default:
+            schedule_id = null;
+      }
+    
+    schedule_id.style.display = "none";
     div_change_shift_position.style.display = "none";
     hidediv.style.display = "none";
     $('.panel').css('background', 'white');
 }
 
 function save_change_shift() {
-    // schedule_id.classList.add("schedule-set-btn");
-    // schedule_id.classList.remove("schedule-req-btn", 'clickedBorder');
+    switch(req_content_flag) {
+        case 0:
+            schedule_id = document.getElementById("first_member_01");
+            schedule_id.style.boxShadow = "0 0 0 3px #fff, 0 0 0 4px red"
+          break;
+        case 1:
+            schedule_id = document.getElementById("first_member_09");
+            schedule_id.style.boxShadow = "0 0 0 3px #fff, 0 0 0 4px red"
+          break;
+        default:
+            schedule_id = null;
+      }
+    schedule_id.classList.add("schedule-set-btn");
+    schedule_id.style.display = "block";
+    schedule_id.classList.remove("schedule-req-btn", 'clickedBorder');
     div_change_shift_position.style.display = "none";
     hidediv.style.display = "none";
     $('.panel').css('background', 'white');
@@ -269,6 +382,23 @@ function hide_req_rightsidediv() {
     first_member_01.classList.remove("schedule-req-btn");
     first_member_09.classList.add("schedule-set-btn");
     first_member_09.classList.remove("schedule-req-btn");
+
+    switch(req_content_flag) {
+        case 0:
+            schedule_id = document.getElementById("first_member_01");
+            schedule_id.style.boxShadow = "none"
+          break;
+        case 1:
+            schedule_id = document.getElementById("first_member_09");
+            schedule_id.style.boxShadow = "none"
+          break;
+        default:
+            schedule_id = null;
+      }
+
+      $('.panel').css('background', 'white');
+
+    
 }
 
 schedule_id = [];
@@ -440,6 +570,21 @@ function confirm_employee() {
 }
 
 function show_div_request() {
+    switch(req_content_flag) {
+        case 0:
+            schedule_id = document.getElementById("first_member_01");
+            schedule_id.style.boxShadow = "0 0 0 3px #fff, 0 0 0 4px red"
+          break;
+        case 1:
+            schedule_id = document.getElementById("first_member_09");
+            schedule_id.style.boxShadow = "0 0 0 3px #fff, 0 0 0 4px red"
+          break;
+        default:
+            schedule_id = null;
+      }
+
+      
+
     div_request_id.style.display = "block";
     req_start_flag = 1;
     if (req_content_flag == 0) {
@@ -479,7 +624,6 @@ function show_div_request() {
         first_member_01.classList.remove("schedule-req-btn");
         first_member_09.classList.add("schedule-set-btn");
         first_member_09.classList.remove("schedule-req-btn");
-        show_reqPaidtime();
     } else {
         approve_01.style.display = "none";
         unapprove_01.style.display = "none";
@@ -538,6 +682,19 @@ window.onclick = function(event) {
             div_change_shift_position.style.display = "none";
             document.body.style.overflow = 'initial';
             flag = 0;
+            switch(req_content_flag) {
+                case 0:
+                    schedule_id = document.getElementById("first_member_01");
+                  break;
+                case 1:
+                    schedule_id = document.getElementById("first_member_09");
+                  break;
+                default:
+                    schedule_id = null;
+              }
+        
+              schedule_id.style.boxShadow = "0 0 0 3px #fff, 0 0 0 4px red"
+            
         }
         if (flag == 4) {
             req_config.style.display = "none";
@@ -552,16 +709,16 @@ window.onclick = function(event) {
 function show_constraints() {
     var w = window.innerWidth;
     if (editState == true) {
-    // if (w < 800) {
-    //     // tip.style.left = '40vw';
-    //     let boxes = document.querySelectorAll(".to_remove");
-    //     let message = document.querySelector('.to_show');
-    //     boxes.forEach(box => box.style.display = "none");
-    //     message.style.display = "table-cell";
-    //     setTimeout(function() {
-    //         boxes.forEach(box => box.style.display = "table-cell");
-    //         message.style.display = 'none';
-    //     }, 3000);
+    if (w < 800) {
+        // tip.style.left = '40vw';
+        let boxes = document.querySelectorAll(".to_remove");
+        let message = document.querySelector('.to_show');
+        boxes.forEach(box => box.style.display = "none");
+        message.style.display = "table-cell";
+        setTimeout(function() {
+            boxes.forEach(box => box.style.display = "table-cell");
+            message.style.display = 'none';
+        }, 3000);
     // } else {
         if (window.matchMedia('screen and (max-width: 768px)').matches) {
             tip.style.top = '30px';
@@ -569,6 +726,7 @@ function show_constraints() {
             w = w / 5.6;
             tip.style.right = w + 'px';
             tip.style.display = 'block';
+            tip.style.position = 'absolute';
             setTimeout(function() { tip.style.display = 'none'; }, 3000);
         }
         else {
@@ -578,6 +736,7 @@ function show_constraints() {
         tip.style.display = 'block';
         setTimeout(function() { tip.style.display = 'none'; }, 3000);
     // } 
+}
 }
 }
 }
@@ -602,6 +761,26 @@ function prev_content() {
     $('.panel').css('background', 'white');
     div_change_shift_position.style.display = "none";
     show_div_request();
+
+    switch(req_content_flag) {
+        case 0:
+            schedule_id = document.getElementById("first_member_01");
+            schedule_id.style.boxShadow = "0 0 0 3px #fff, 0 0 0 4px red"
+            document.getElementById("first_member_09").style.boxShadow = "none"
+            
+          break;
+        case 1:
+            schedule_id = document.getElementById("first_member_09");
+            schedule_id.style.boxShadow = "0 0 0 3px #fff, 0 0 0 4px red"
+            document.getElementById("first_member_01").style.boxShadow = "none"
+          break;
+        case 2:
+            document.getElementById("first_member_09").style.boxShadow = "none"
+            document.getElementById("first_member_01").style.boxShadow = "none"
+            break;
+        default:
+            schedule_id = null;
+      }
 }
 
 function next_content() {
@@ -612,6 +791,28 @@ function next_content() {
     $('.panel').css('background', 'white');
     div_change_shift_position.style.display = "none";
     show_div_request();
+
+    switch(req_content_flag) {
+        case 0:
+            schedule_id = document.getElementById("first_member_01");
+            schedule_id.style.boxShadow = "0 0 0 3px #fff, 0 0 0 4px red"
+            document.getElementById("first_member_09").style.boxShadow = "none"
+            
+          break;
+        case 1:
+            schedule_id = document.getElementById("first_member_09");
+            schedule_id.style.boxShadow = "0 0 0 3px #fff, 0 0 0 4px red"
+            document.getElementById("first_member_01").style.boxShadow = "none"
+          break;
+        case 2:
+            document.getElementById("first_member_09").style.boxShadow = "none"
+            document.getElementById("first_member_01").style.boxShadow = "none"
+            break;
+        default:
+            schedule_id = null;
+      }
+
+      
 }
 
 function show_reqPaidtime() {

@@ -87,12 +87,12 @@
     <!--Header finish-->
     <div class="row top_toolbar">
         <div class="col-xs-auto top_left_toolbar">
-            <span class="txt_nav_show_ym">April 2019</span>
+            <span class="txt_nav_show_ym" id="chosen_month">April 2019</span>
             <div class="btn-group btn_group_passing_date">
-                <button type="button" class="btn btn_nav_pass_date">
+                <button type="button" class="btn btn_nav_pass_date" onclick="prev_month_week_day()">
                             <i class="fas fa-caret-left"></i>
                         </button>
-                <button type="button" class="btn btn_nav_pass_date">
+                <button type="button" class="btn btn_nav_pass_date" onclick="next_month_week_day()">
                             <i class="fas fa-caret-right"></i>
                         </button>
             </div>
@@ -250,7 +250,7 @@
             </div>
         </div>
         <div id="req_paidtime_content_01" style="display: none;">
-            <div class="panel">
+            <div class="panel" onclick="show_reqPaidtime()">
                 <button type="button" class="btn" style="padding: 0;">
                         <span class="employee_modal_role" style="color: #282731;">Paid Time-Off</span>
                     </button>
@@ -2147,6 +2147,7 @@
                 </table>
             </div>
         </div>
+        
         <script src="js/sortable.js"></script>
         <script>
             $(document).ready(function() {
