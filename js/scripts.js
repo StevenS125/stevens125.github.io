@@ -202,7 +202,16 @@ function exit() {
     document.getElementById('add_shift').style.display = "none";
     // users_btn.style.display = "inline-block";
     editState = false;
+
+    // clears fix3_5 issue that all dots do not display when not in edit mode 
+    if (editState == false) {
+        let unmarkedOnes = document.querySelectorAll('.schedule-pre-btn');
+        for(let i = 0; i < unmarkedOnes.length; i++){
+            unmarkedOnes[i].style.opacity = "0";
+        }
+
     document.getElementById("tip").style.display = "none";
+    }
 }
 
 function exit_add() {
