@@ -39,14 +39,13 @@ function dayhref() {
     week_day_month_selected = 2;
 }
 
-
+// toggle between months weeks days in top arrows
 function next_month_week_day() {
     switch(week_day_month_selected) {
         case 0:
             if (month_selected > 0 && month_selected < 11) {
             month_selected++
             }
-            console.log(month_selected)
           break;
         case 1:
             
@@ -865,8 +864,7 @@ function show_reqPaidtime() {
     approve_01.style.display = "block";
     td_first_20.classList.add("approve_relative");
     $('.panel').css('background', '#F9F9F9');
-    var elmnt = document.getElementById("td_first_15_19");
-    elmnt.scrollIntoView(true);
+
     if (month_selected !== 3) {
         month_selected = 3
         document.getElementById("chosen_month").innerHTML = "April 2019";
