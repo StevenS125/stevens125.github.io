@@ -315,7 +315,7 @@ function display_change_config(event, clicked_id) {
     if (req_start_flag == 1) {
         $('.panel').css('background', '#F9F9F9');
         flag = 3;
-        hidediv.style.display = "block";
+        // hidediv.style.display = "block";
         div_change_shift_position.style.display = "block";
         var x = event.clientX;
         var y = event.clientY;
@@ -415,10 +415,12 @@ function hide_req_rightsidediv() {
         case 0:
             schedule_id = document.getElementById("first_member_01");
             schedule_id.style.boxShadow = "none"
+            div_change_shift_position.style.display = 'none'
           break;
         case 1:
             schedule_id = document.getElementById("first_member_09");
             schedule_id.style.boxShadow = "none"
+            div_change_shift_position.style.display = 'none'
           break;
         default:
             schedule_id = null;
@@ -619,8 +621,6 @@ function show_div_request() {
         req_delete_content_01.style.display = "block";
         req_adjust_content_01.style.display = "none";
         req_paidtime_content_01.style.display = "none";
-        var elmnt = document.getElementById("first_member_01");
-            elmnt.scrollIntoView(true);
     }
     if (req_content_flag == 1) {
         req_delete_content_01.style.display = "none";
@@ -710,6 +710,7 @@ window.onclick = function(event) {
             div_change_shift_position.style.display = "none";
             document.body.style.overflow = 'initial';
             flag = 0;
+
             switch(req_content_flag) {
                 case 0:
                     schedule_id = document.getElementById("first_member_01");
