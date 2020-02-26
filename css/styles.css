@@ -2151,7 +2151,7 @@ p.reason-content {
 
     }
     .div_request {
-        position: absolute;
+        position: fixed;
         top: 0px;
         right: 0;
         background-color: white;
