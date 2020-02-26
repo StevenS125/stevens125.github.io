@@ -293,9 +293,14 @@ function display_change_config(event, clicked_id) {
     switch(req_content_flag) {
         case 0:
             schedule_id = document.getElementById("first_member_01");
+            document.getElementById("req_delete_content_01_panel").setAttribute( "onClick", "hide_req_rightsidediv()" ) ;
           break;
         case 1:
             schedule_id = document.getElementById("first_member_09");
+            document.getElementById("req_adjust_content_01_panel").setAttribute( "onClick", "hide_req_rightsidediv()" );
+          break;
+        case 2:
+            document.getElementById("req_paidtime_content_01_panel").setAttribute( "onClick", "hide_req_rightsidediv()" );
           break;
         default:
             schedule_id = null;
@@ -416,11 +421,16 @@ function hide_req_rightsidediv() {
             schedule_id = document.getElementById("first_member_01");
             schedule_id.style.boxShadow = "none"
             div_change_shift_position.style.display = 'none'
+            document.getElementById("req_delete_content_01_panel").setAttribute( "onClick", "display_change_config()" );
           break;
         case 1:
             schedule_id = document.getElementById("first_member_09");
             schedule_id.style.boxShadow = "none"
             div_change_shift_position.style.display = 'none'
+            document.getElementById("req_adjust_content_01_panel").setAttribute( "onClick", "display_change_config()" );
+          break;
+        case 2:
+                document.getElementById("req_paidtime_content_01_panel").setAttribute( "onClick", "show_reqPaidtime()" );
           break;
         default:
             schedule_id = null;
@@ -740,7 +750,7 @@ function show_constraints() {
     var w = window.innerWidth;
     if (editState == true) {
     if (w < 800) {
-        // tip.style.left = '40vw';
+        tip.style.left = '40vw';
         let boxes = document.querySelectorAll(".to_remove");
         let message = document.querySelector('.to_show');
         boxes.forEach(box => box.style.display = "none");
@@ -749,7 +759,7 @@ function show_constraints() {
             boxes.forEach(box => box.style.display = "table-cell");
             message.style.display = 'none';
         }, 3000);
-    // } else {
+    } else {
         if (window.matchMedia('screen and (max-width: 768px)').matches) {
             tip.style.top = '30px';
             w = w - 400;
@@ -863,6 +873,7 @@ function show_reqPaidtime() {
         $('.second_member').show()
         $('.fifth_member').show()
     }
+    document.getElementById("req_paidtime_content_01_panel").setAttribute( "onClick", "hide_req_rightsidediv()" );
 }
 
 function paidtime_approve() {
