@@ -49,6 +49,69 @@
             padding: 0 80px;
         }
 
+        .top-form-text {
+            display:block;margin-top:.83em;margin-bottom:.83em;font-size:20px;
+        }
+
+        .top-form-input {
+            width:75%;
+            float:right;
+            font-size:20px;
+            height:30px;
+        }
+
+        .submit_btn {
+            background-color:rgb(16,93,121);
+            color:#fff;
+            height:50px;
+            width:200px;
+            font-size:20px; 
+            margin-left:80px;
+        }
+        .select-css {
+    float: left;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%; 
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+      linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+.select-css::-ms-expand {
+    display: none;
+}
+.select-css:hover {
+    border-color: #888;
+}
+.select-css:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
+}
+.select-css option {
+    font-weight:normal;
+}
+
+
+
         @media only screen and (max-width: 767px) {
             .heading {
             height:80px;
@@ -73,6 +136,19 @@
             border: 1px solid #000;
             width: 90% !important;
         }
+        .top-form-text {
+            display:block;margin-top:.83em;margin-bottom:.83em;font-size:20px;
+        }
+        .top-form-input {
+            width:95%;
+            border:1px solid #000;
+            float:left;
+            margin: .83em 0;
+        }
+        .submit_btn {
+            margin-left:15px;
+        }
+
         }
 
         
@@ -121,11 +197,10 @@
                                                 <div
                                                     style="margin-bottom:1.5em;vertical-align:middle;margin-left:0;margin-top:0;max-width:100%">
                                                     <label for="m_5152660812542473951entry_363855960">
-                                                        <div
-                                                            style="display:block;margin-top:.83em;margin-bottom:.83em;font-size:20px;">
+                                                        <div class="top-form-text">
                                                             Employee Name
-                                                            <input type="text" name="entry.363855960" value=""
-                                                                style="width:75%;float:right;font-size:20px;height:30px;"
+                                                            <input class="top-form-input" type="text" name="entry.363855960" value=""
+                                                                
                                                                 id="m_5152660812542473951entry_363855960" dir="auto"
                                                                 aria-label="Employee Name  " aria-required="true"
                                                                 title="">
@@ -147,13 +222,12 @@
                                                 <div
                                                     style="margin-bottom:1.5em;vertical-align:middle;margin-left:0;margin-top:0;max-width:100%">
                                                     <label for="m_5152660812542473951entry_1452592066">
-                                                        <div
-                                                            style="display:block;font-size:20px;margin-top:.83em;margin-bottom:.83em; width:100%">
+                                                        <div class="top-form-text">
                                                             Title
                                                             <input type="text" name="entry.1452592066" value=""
                                                                 id="m_5152660812542473951entry_1452592066" dir="auto"
                                                                 aria-label="Title  " aria-required="true" title=""
-                                                                style="width:75%;float:right;font-size:20px;height:30px">
+                                                                class="top-form-input">
                                                             <label for="m_5152660812542473951itemView.getDomIdToLabel()"
                                                                 aria-label="(Required field)"></label>
                                                             <span aria-hidden="true" style="color:#c43b1d">*</span>
@@ -172,13 +246,12 @@
                                                 <div
                                                     style="margin-bottom:1.5em;vertical-align:middle;margin-left:0;margin-top:0;max-width:100%">
                                                     <label for="m_5152660812542473951entry_1181390977">
-                                                        <div
-                                                            style="display:block;font-size:20px;margin-top:.83em;margin-bottom:.83em">
+                                                        <div class="top-form-text">
                                                             <span style="width:50%;">
                                                                 Manager</span>
 
                                                             <input type="text"
-                                                                style="font-size:20px;height:30px;width:75%;float:right;"
+                                                            class="top-form-input"
                                                                 name="entry.1181390977" value=""
                                                                 id="m_5152660812542473951entry_1181390977" dir="auto"
                                                                 aria-label="Manager  " aria-required="true" title="">
@@ -198,15 +271,15 @@
                                                 <div
                                                     style="margin-bottom:1.5em;vertical-align:middle;margin-left:0;margin-top:0;max-width:100%">
                                                     <label for="m_5152660812542473951entry_1138110293">
-                                                        <div
-                                                            style="display:block;font-weight:bold;margin-top:.83em;margin-bottom:.83em">
+                                                        <div class="top-form-text">
                                                             Date
                                                             <div role="group" aria-label="Date  ">
                                                                 <div role="group"
                                                                     style="margin-right:2em;min-height:32px;padding-left:3px;vertical-align:middle;margin:4px 3px;display:inline-block">
                                                                     <select name="entry.1138110293_month"
                                                                         id="m_5152660812542473951entry.1138110293_month"
-                                                                        aria-label="Month" aria-required="true">
+                                                                        aria-label="Month" aria-required="true"
+                                                                        class="select-css">
                                                                         <option value="">Month</option>
                                                                         <option value="1">January</option>
                                                                         <option value="2">February</option>
@@ -220,7 +293,9 @@
                                                                         <option value="10">October</option>
                                                                         <option value="11">November</option>
                                                                         <option value="12">December</option>
-                                                                    </select> <select name="entry.1138110293_day"
+                                                                    </select> <select 
+                                                                        class="select-css"
+                                                                        name="entry.1138110293_day"
                                                                         id="m_5152660812542473951entry.1138110293_day"
                                                                         aria-label="Day of month" aria-required="true">
                                                                         <option value="">Day</option>
@@ -256,7 +331,9 @@
                                                                         <option value="30">30</option>
                                                                         <option value="31">31</option>
                                                                     </select>
-                                                                    <select name="entry.1138110293_year"
+                                                                    <select 
+                                                                    class="select-css"
+                                                                        name="entry.1138110293_year"
                                                                         id="m_5152660812542473951entry.1138110293_year"
                                                                         aria-label="Year" aria-required="true">
                                                                         <option value="">Year</option>
@@ -1745,7 +1822,7 @@
                                                         <td id="m_5152660812542473951navigation-buttons" dir="ltr"
                                                             style="margin-bottom:1.5em;vertical-align:middle;margin-left:0;margin-top:0;max-width:100%;display:inline-block">
                                                             <input
-                                                                style="background-color: rgb(16,93,121);color:#fff;height:50px;width:200px;font-size:20px;"
+                                                                class="submit_btn"
                                                                 type="submit" name="submit" value="Submit"
                                                                 id="m_5152660812542473951ss-submit">
                                                         </td>
