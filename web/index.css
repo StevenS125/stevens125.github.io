@@ -175,7 +175,7 @@ canvas {
     height: 14vw;
     padding: 2vw;
     margin: 3vw 9.6vw;
-    top: 0;
+    top: 2px;
     left: 0;
 }
 
@@ -192,6 +192,7 @@ canvas {
     margin: 0 auto;
 }
 
+/* Small Desktop */
 @media only screen and (max-width: 1225px) {
     canvas {
         position: relative !important;
@@ -203,6 +204,7 @@ canvas {
     }
   }
 
+  /* Smaller desktop */
   @media only screen and (max-width: 1075px) {
     canvas {
         position: relative !important;
@@ -215,8 +217,83 @@ canvas {
     }
   }
 
+/* Ipad Pro Portrait */
+  @media only screen and (max-width: 1024px) and (device-height: 1366px) and (orientation:portrait) {
+    canvas {
+        position: absolute !important;
+        width: 66vw;
+        height: 36vw;
+        padding: 0;
+        margin: 3vw 0vw;
+        top: 75px;
+        left: -8vw;
+    }
+    
+    .overlay {
+        width: 80vw !important;
+        height: 90vh !important;
+        z-index: 2;
+        max-height: 100%;
+        margin: 0 auto;
+    }
+    
+    #core {
+        width: 100vw;
+        margin: 0 auto;
+    }
+    body {
+        touch-action: manipulation;
+    }
 
-  @media only screen and (max-width: 1024px) {
+    .lcd {
+        z-index: 5;
+        left: 25%;
+        top: 0;
+        position: absolute;
+    }
+    
+  }
+
+  /* Ipad Pro landscape */
+  @media only screen and (max-width: 1366px) and (device-height: 1024px) and (orientation:landscape) {
+    canvas {
+        position: absolute !important;
+        width: 37vw;
+        height: 20vw;
+        padding: 0;
+        margin: 3vw 0vw;
+        top: 48px;
+        left: 6.5vw;
+    }
+    
+    .overlay {
+        width: 45vw !important;
+        height: 90vh !important;
+        z-index: 2;
+        max-height: 100%;
+        margin: 0 auto;
+    }
+    
+    #core {
+        width: 100vw;
+        margin: 0 auto;
+    }
+    body {
+        touch-action: manipulation;
+    }
+
+    .lcd {
+        z-index: 5;
+        left: 25%;
+        top: 0;
+        position: absolute;
+    }
+    
+  }
+
+
+/* Ipad Portrait */
+  @media only screen and (max-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
     canvas {
         position: absolute !important;
         width: 66vw;
@@ -252,7 +329,45 @@ canvas {
     
   }
 
-  @media only screen and (max-width: 767px) {
+  /* Ipad Landscape */
+  @media only screen and (max-width: 1024px) and (device-height: 768px) and (orientation:landscape) {
+    canvas {
+        position: absolute !important;
+        width: 37vw;
+        height: 20vw;
+        padding: 0;
+        margin: 3vw 0vw;
+        top: 44px;
+        left: 6.5vw;
+    }
+    
+    .overlay {
+        width: 45vw !important;
+        height: 90vh !important;
+        z-index: 2;
+        max-height: 100%;
+        margin: 0 auto;
+    }
+    
+    #core {
+        width: 100vw;
+        margin: 0 auto;
+    }
+    body {
+        touch-action: manipulation;
+    }
+
+    .lcd {
+        z-index: 5;
+        left: 25%;
+        top: 0;
+        position: absolute;
+    }
+    
+  }
+
+  /* Mobile portrait */
+  @media only screen and (max-width: 767px) and (orientation:portrait) {
     canvas {
         position: absolute !important;
         width: 83vw;
@@ -280,4 +395,39 @@ canvas {
     }
     
   }
+
+    /* Mobile landscape */
+    @media only screen and (max-width: 812px) and (orientation:landscape) {
+        canvas {
+            position: absolute !important;
+            width: 20vw;
+            height: 11vw;
+            padding: 0;
+            margin: 3vw 0vw;
+            top: 25px;
+            left: 15vw;
+        }
+        
+        .overlay {
+            width: 25vw !important;
+            height: 90vh !important;
+            z-index: 2;
+            max-height: 100%;
+            margin: 0 auto;
+        }
+        
+        #core {
+            width: 100vw;
+            margin: 0 auto;
+        }
+        body {
+            touch-action: manipulation;
+        }
+        .lcd {
+            z-index: 5;
+            left: 25%;
+            top: 0;
+            position: absolute;
+        }
+      }
   
