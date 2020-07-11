@@ -142,4 +142,9 @@ footer .section-title {
         height: auto;
         width: 100%;
     }
+
+    .vidMobile {
+        width: 100%;
+        height: auto;
+    }
   }
